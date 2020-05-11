@@ -24,7 +24,7 @@ dense_7 (Dense)              (None, 1)                 101
 Total params: 213,301
 Trainable params: 213,301
 Non-trainable params: 0</pre>
-<p><img src="https://github.com/nvty13/rnn-examples/blob/master/images/JPEG%20image-DE00FD10A46B-1.jpeg?raw=true" alt="" width="100%" /></p>
+<p><img src="https://github.com/nvty13/rnn-examples/blob/master/images/JPEG%20image-DE00FD10A46B-1.jpeg?raw=true" alt="" width="500" /></p>
 <h3>5. Training and testing:</h3>
 <pre>num_epochs = 3<br /><br /># If exist a saved model:<br />if path.exists("rnn.h5"):<br /> model.load_weights("rnn.h5")<br />else:<br /> # Otherwise, train from scratch<br /> model.fit(X_train, y_train, validation_data=(X_test, y_test), batch_size=batch_size, epochs=num_epochs)<br /> model.save("rnn.h5")</pre>
 <h3>6. Accuracy:</h3>
