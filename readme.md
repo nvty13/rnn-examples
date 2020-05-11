@@ -9,7 +9,7 @@
 <pre>vocabulary_size = 5000<br /><br />(X_train, y_train), (X_test, y_test) = imdb.load_data(num_words = vocabulary_size)</pre>
 <p>The dataset contains 2 columns: review column is the comments from reviewers and the sentiment column (0 for negative and 1 for positive)</p>
 <p>Note that the review is stored as a sequence of integers. These are word IDs that have been pre-assigned to individual words, and the label is an integer.</p>
-<p><img src="https://github.com/nvty13/rnn-examples/blob/master/images/IMDB.png?raw=true" alt="" width="100%" /></p>
+<p><img src="https://github.com/nvty13/rnn-examples/blob/master/images/IMDB.png?raw=true" alt="" width="500" style="display: block; margin-left: auto; margin-right: auto;" /></p>
 <h3>&nbsp;3. The model structure:</h3>
 <pre>Model: "sequential_8"
 _________________________________________________________________
@@ -24,7 +24,7 @@ dense_7 (Dense)              (None, 1)                 101
 Total params: 213,301
 Trainable params: 213,301
 Non-trainable params: 0</pre>
-<p><img src="https://github.com/nvty13/rnn-examples/blob/master/images/JPEG%20image-DE00FD10A46B-1.jpeg?raw=true" alt="" width="500" /></p>
+<p><img src="https://github.com/nvty13/rnn-examples/blob/master/images/JPEG%20image-DE00FD10A46B-1.jpeg?raw=true" alt="" width="500" style="display: block; margin-left: auto; margin-right: auto;" /></p>
 <h3>5. Training and testing:</h3>
 <pre>num_epochs = 3<br /><br /># If exist a saved model:<br />if path.exists("rnn.h5"):<br /> model.load_weights("rnn.h5")<br />else:<br /> # Otherwise, train from scratch<br /> model.fit(X_train, y_train, validation_data=(X_test, y_test), batch_size=batch_size, epochs=num_epochs)<br /> model.save("rnn.h5")</pre>
 <h3>6. Accuracy:</h3>
@@ -59,12 +59,13 @@ Non-trainable params: 0</pre>
  [  33    6   58 ...    9   57  975]
  ...
  [   0    0    0 ...   21  846    2]
- [   0    0    0 ... 2302    7  470]
+ [   0    0    0 ... 2302    7  470]:
  [   0    0    0 ...   34 2005 2643]]</pre>
 </div>
 </div>
 </div>
 </div>
+<p>The outputs below are the corresponding predicted values of each of the above inputs:</p>
 <div class="input">
 <div class="inner_cell">
 <div class="input_area" aria-label="Edit code here">
@@ -145,7 +146,7 @@ Non-trainable params: 0</pre>
 </div>
 </div>
 <p><strong></strong></p>
-<p><strong>2. VCB stock prediction</strong></p>
+<h2><strong>II. VCB stock prediction</strong></h2>
 <p>&nbsp;</p>
 <div id="gtx-anchor" style="position: absolute; visibility: hidden; left: 8px; top: 1597.36px; width: 602.578px; height: 143px;">&nbsp;</div>
 <div class="jfk-bubble gtx-bubble" style="visibility: visible; left: -14px; top: 1252px; opacity: 1;" role="alertdialog" aria-describedby="bubble-11">&nbsp;</div>
