@@ -3,7 +3,7 @@
 <h3>1. Dataset:</h3>
 <p>In this section, we apply RNNs (particularly LSTM) to IMDB dataset. The original dataset can be found <a href="https://www.imdb.com/interfaces/">here</a> on the home page.</p>
 <p>Luckily, Keras has a built-in IMDB dataset, by inserting this line of code to your source:</p>
-<p>from keras.datasets import imdb</p>
+<pre><p>from keras.datasets import imdb</p></pre>
 <p>&nbsp;</p>
 <h3>2. Load the dataset</h3>
 <pre>vocabulary_size = 5000<br /><br />(X_train, y_train), (X_test, y_test) = imdb.load_data(num_words = vocabulary_size)</pre>
