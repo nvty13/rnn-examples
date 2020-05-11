@@ -146,7 +146,66 @@ Non-trainable params: 0</pre>
 </div>
 </div>
 <p><strong></strong></p>
+<div class="input">
+<div class="inner_cell">
+<div class="input_area" aria-label="Edit code here">
+<div class="CodeMirror cm-s-ipython">
+<div class="CodeMirror-scroll" draggable="false" tabindex="-1">
+<div class="CodeMirror-sizer">
+<div>
+<div class="CodeMirror-lines" role="presentation">
+<div role="presentation"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <h2><strong>II. VCB stock prediction</strong></h2>
-<p>&nbsp;</p>
+<h3>1. Dataset:</h3>
+<p>Training data: <a href="https://github.com/nvty13/rnn-examples/raw/master/vcb_2009_2018.csv">vcb_2009_2018.csv</a> is the stock values from 2009 - 2018&nbsp;</p>
+<p>Testing data: <a href="https://github.com/nvty13/rnn-examples/raw/master/vcb_2019.csv">vcb_2019.csv</a> is the stock values of the year 2019</p>
 <div id="gtx-anchor" style="position: absolute; visibility: hidden; left: 8px; top: 1597.36px; width: 602.578px; height: 143px;">&nbsp;</div>
-<div class="jfk-bubble gtx-bubble" style="visibility: visible; left: -14px; top: 1252px; opacity: 1;" role="alertdialog" aria-describedby="bubble-11">&nbsp;</div>
+<h3 class="jfk-bubble gtx-bubble" style="visibility: visible; left: -14px; top: 1252px; opacity: 1;" role="alertdialog" aria-describedby="bubble-11">2. Loading the dataset</h3>
+<div class="jfk-bubble gtx-bubble" style="visibility: visible; left: -14px; top: 1252px; opacity: 1;" role="alertdialog" aria-describedby="bubble-11">The dataset contains a lot of columns but we only focus on the "CLOSE" price value</div>
+<h3 class="jfk-bubble gtx-bubble" style="visibility: visible; left: -14px; top: 1252px; opacity: 1;" role="alertdialog" aria-describedby="bubble-11">3. Model structure</h3>
+<pre>Model: "sequential_2"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+lstm_5 (LSTM)                (None, 60, 50)            10400     
+_________________________________________________________________
+dropout_5 (Dropout)          (None, 60, 50)            0         
+_________________________________________________________________
+lstm_6 (LSTM)                (None, 60, 50)            20200     
+_________________________________________________________________
+dropout_6 (Dropout)          (None, 60, 50)            0         
+_________________________________________________________________
+lstm_7 (LSTM)                (None, 60, 50)            20200     
+_________________________________________________________________
+dropout_7 (Dropout)          (None, 60, 50)            0         
+_________________________________________________________________
+lstm_8 (LSTM)                (None, 50)                20200     
+_________________________________________________________________
+dropout_8 (Dropout)          (None, 50)                0         
+_________________________________________________________________
+dense_2 (Dense)              (None, 1)                 51        
+=================================================================
+Total params: 71,051
+Trainable params: 71,051
+Non-trainable params: 0</pre>
+<h3 class="jfk-bubble gtx-bubble" style="visibility: visible; left: -14px; top: 1252px; opacity: 1;" role="alertdialog" aria-describedby="bubble-11">&nbsp;4. Training and testing</h3>
+<pre class="jfk-bubble gtx-bubble" style="visibility: visible; left: -14px; top: 1252px; opacity: 1;" role="alertdialog" aria-describedby="bubble-11"># If exist a saved model, then load pretrained weight<br />if path.exists("mymodel.h5"):<br /> regressor.load_weights("mymodel.h5")<br />else:<br /> # otherwise, train from beginning<br /> regressor.fit(X_train, y_train, epochs = 10, batch_size = 32)<br /> regressor.save("mymodel.h5")</pre>
+<p>6. Predicting:</p>
+<pre>dataset_total = pd.concat((dataset_train['CLOSE'], dataset_test['CLOSE']), axis = 0)<br />inputs = dataset_total[len(dataset_total) - len(dataset_test) - 60:].values<br />inputs = inputs.reshape(-1,1)<br />inputs = sc.transform(inputs)<br /><br />X_test = []<br />no_of_sample = len(inputs)<br /><br />for i in range(60, no_of_sample):<br /> X_test.append(inputs[i-60:i, 0])<br /><br />X_test = np.array(X_test)<br />X_test = np.reshape(X_test, (X_test.shape[0], X_test.shape[1], 1))<br />predicted_stock_price = regressor.predict(X_test)<br />predicted_stock_price = sc.inverse_transform(predicted_stock_price)</pre>
+<p>7. Plotting the predicted value and the ground-truth values</p>
+<pre># Plotting:<br />plt.plot(real_stock_price, color = 'red', label = 'Real VCB Stock Price')<br />plt.plot(predicted_stock_price, color = 'blue', label = 'Predicted VCB Stock Price')<br />plt.title('VCB Stock Price Prediction')<br />plt.xlabel('Time')<br />plt.ylabel('VCB Stock Price')<br />plt.legend()<br />plt.show()</pre>
+<p><img src="https://github.com/nvty13/rnn-examples/blob/master/VCB%20Stock%20prediction.png?raw=true" alt="" width="100%" /></p>
+<p></p>
+<h2>III. References:</h2>
+<p>These examples were referenced from:</p>
+<p class="fp b fq gb fs gc fu gd fw ge fy gf ct"><a href="https://towardsdatascience.com/a-beginners-guide-on-sentiment-analysis-with-rnn-9e100627c02e">A Beginner&rsquo;s Guide on Sentiment Analysis with RNN</a></p>
+<p><a href="https://github.com/thangnch/MiAI_Stock_Predict"><span>Use LSTM to predict Vietcombank stock prices</span></a></p>
+<p>Please email me if you have any problems: nvty@ctu.edu.vn</p>
