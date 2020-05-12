@@ -96,13 +96,13 @@ Non-trainable params: 0</pre>
 <div class="output">
 <div class="output_area">
 <div class="output_subarea output_text output_stream output_stdout">
-<pre>[[0.02767599]
- [0.99822277]
- [0.49427885]
+<pre>[[0.02767599] ‣ "Negative"
+ [0.99822277]  ‣ "Positive"     
+ [0.49427885] ‣ "Negative"
  ...
- [0.02382611]
- [0.14700828]
- [0.75354964]]</pre>
+ [0.02382611] ‣ "Negative"
+ [0.14700828] ‣ "Negative"
+ [0.75354964]] ‣ "Positive"</pre>
 </div>
 </div>
 </div>
