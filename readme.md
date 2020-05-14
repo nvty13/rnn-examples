@@ -210,7 +210,6 @@ dense_2 (Dense)              (None, 1)                 51
 Total params: 71,051
 Trainable params: 71,051
 Non-trainable params: 0</pre>
-<img src='https://raw.githubusercontent.com/nvty13/rnn-examples/master/images/VCBLSTM.jpeg' width='500px'>
 <h3 class="jfk-bubble gtx-bubble" style="visibility: visible; left: -14px; top: 1252px; opacity: 1;" role="alertdialog" aria-describedby="bubble-11">&nbsp;4. Training and testing</h3>
 <pre class="jfk-bubble gtx-bubble" style="visibility: visible; left: -14px; top: 1252px; opacity: 1;" role="alertdialog" aria-describedby="bubble-11"># If exist a saved model, then load pretrained weight<br />if path.exists("mymodel.h5"):<br /> regressor.load_weights("mymodel.h5")<br />else:<br /> # otherwise, train from beginning<br /> regressor.fit(X_train, y_train, epochs = 10, batch_size = 32)<br /> regressor.save("mymodel.h5")</pre>
 <p>6. Predicting:</p>
