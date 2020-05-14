@@ -108,6 +108,16 @@ Non-trainable params: 0</pre>
 </div>
 </div>
 </div>
+ <pre>
+ Input                               |  Predicted value |  Predicted Sentiment
+ [   0    0    0 ...   14    6  717] |  [0.02767599]    |  0 (Neg)
+ [   0    0    0 ...  125    4 3077] |  [0.99822277]    |  1 (Pos)
+ [  33    6   58 ...    9   57  975] |  [0.49427885]    |  0 (Neg)
+ ...
+ [   0    0    0 ...   21  846    2] |  [0.02382611]    |  0 (Neg)
+ [   0    0    0 ... 2302    7  470] |  [0.14700828]    |  0 (Neg)
+ [   0    0    0 ...   34 2005 2643] |  [0.75354964]    |  1 (Pos)
+ </pre>
 <div class="cell code_cell rendered unselected" tabindex="2">
 <div class="input">
 <div class="inner_cell">
