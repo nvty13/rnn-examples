@@ -179,6 +179,9 @@ Non-trainable params: 0</pre>
 <p>Testing data: <a href="https://github.com/nvty13/rnn-examples/raw/master/vcb_2019.csv">vcb_2019.csv</a> is the stock values of the year 2019</p>
 <div id="gtx-anchor" style="position: absolute; visibility: hidden; left: 8px; top: 1597.36px; width: 602.578px; height: 143px;">&nbsp;</div>
 <h3 class="jfk-bubble gtx-bubble" style="visibility: visible; left: -14px; top: 1252px; opacity: 1;" role="alertdialog" aria-describedby="bubble-11">2. Loading the dataset</h3>
+<pre>
+dataset_train = pd.read_csv('vcb_2009_2018.csv')
+</pre>
 <div class="jfk-bubble gtx-bubble" style="visibility: visible; left: -14px; top: 1252px; opacity: 1;" role="alertdialog" aria-describedby="bubble-11">The dataset contains a lot of columns but we only focus on the "CLOSE" price value</div>
 <h3 class="jfk-bubble gtx-bubble" style="visibility: visible; left: -14px; top: 1252px; opacity: 1;" role="alertdialog" aria-describedby="bubble-11">3. Model structure</h3>
 <pre>Model: "sequential_2"
