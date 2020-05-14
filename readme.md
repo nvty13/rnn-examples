@@ -183,7 +183,7 @@ Non-trainable params: 0</pre>
 dataset_train = pd.read_csv('vcb_2009_2018.csv')
 </pre>
 <div class="jfk-bubble gtx-bubble" style="visibility: visible; left: -14px; top: 1252px; opacity: 1;" role="alertdialog" aria-describedby="bubble-11">The dataset contains a lot of columns but we only focus on the "CLOSE" price value</div>
-<img src="https://github.com/nvty13/rnn-examples/blob/master/images/VCB%20dataset.png" width=100%>
+<img src="https://github.com/nvty13/rnn-examples/blob/master/images/VCB%20dataset.png" width="100%">
 <h3 class="jfk-bubble gtx-bubble" style="visibility: visible; left: -14px; top: 1252px; opacity: 1;" role="alertdialog" aria-describedby="bubble-11">3. Model structure</h3>
 <pre>Model: "sequential_2"
 _________________________________________________________________
