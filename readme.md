@@ -174,6 +174,7 @@ Non-trainable params: 0</pre>
 </div>
 </div>
 <h2><strong>II. VCB stock prediction</strong></h2>
+Note: This tutorial is for studying purpose only. In fact, the stock price can be effected by many factors.
 <h3>1. Dataset:</h3>
 <p>Training data: <a href="https://github.com/nvty13/rnn-examples/raw/master/vcb_2009_2018.csv">vcb_2009_2018.csv</a> is the stock values from 2009 - 2018&nbsp;</p>
 <p>Testing data: <a href="https://github.com/nvty13/rnn-examples/raw/master/vcb_2019.csv">vcb_2019.csv</a> is the stock values of the year 2019</p>
