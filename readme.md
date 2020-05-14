@@ -216,7 +216,7 @@ Non-trainable params: 0</pre>
 <pre>dataset_total = pd.concat((dataset_train['CLOSE'], dataset_test['CLOSE']), axis = 0)<br />inputs = dataset_total[len(dataset_total) - len(dataset_test) - 60:].values<br />inputs = inputs.reshape(-1,1)<br />inputs = sc.transform(inputs)<br /><br />X_test = []<br />no_of_sample = len(inputs)<br /><br />for i in range(60, no_of_sample):<br /> X_test.append(inputs[i-60:i, 0])<br /><br />X_test = np.array(X_test)<br />X_test = np.reshape(X_test, (X_test.shape[0], X_test.shape[1], 1))<br />predicted_stock_price = regressor.predict(X_test)<br />predicted_stock_price = sc.inverse_transform(predicted_stock_price)</pre>
 <p>7. Plotting the predicted value and the ground-truth values</p>
 <pre># Plotting:<br />plt.plot(real_stock_price, color = 'red', label = 'Real VCB Stock Price')<br />plt.plot(predicted_stock_price, color = 'blue', label = 'Predicted VCB Stock Price')<br />plt.title('VCB Stock Price Prediction')<br />plt.xlabel('Time')<br />plt.ylabel('VCB Stock Price')<br />plt.legend()<br />plt.show()</pre>
-<p><img src="https://github.com/nvty13/rnn-examples/blob/master/VCB%20Stock%20prediction.png?raw=true" alt="" width=500 /></p>
+<p><img src="https://github.com/nvty13/rnn-examples/blob/master/VCB%20Stock%20prediction.png?raw=true" alt="" width='80%' /></p>
 <p></p>
 <h2>III. References:</h2>
 <p>These examples were referenced from:</p>
